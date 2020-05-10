@@ -46,3 +46,26 @@ test：           //测试
   | commentId| 评论人的id|
   | com_content| 评论内容|
   |com_date|评论日期|
+  
+  ### 接口文档
+  ----
+  ##### 登录接口
+  1. 接口名： /index/login
+  2. 请求参数：GET
+  3. 接口方法：json
+  4. 请求参数：
+     ~~~~
+     1. userId：账号
+     2. password：密码
+     ~~~~
+  5. 返回类型：
+     ~~~~
+     {
+       "stautus":200,
+       "msg": ok,
+       "data":{
+           type: 0/1/2; // 0： 管理员。 1：老人。 2：义工
+        }
+     }
+     ~~~~
+   
