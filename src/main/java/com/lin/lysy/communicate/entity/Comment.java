@@ -1,9 +1,11 @@
 package com.lin.lysy.communicate.entity;
 
 import com.lin.lysy.index.entity.User;
+import lombok.Data;
 
 import java.util.Date;
 
+@Data
 public class Comment{
     /**
      *  用户的id 账户
