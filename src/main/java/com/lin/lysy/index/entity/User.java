@@ -1,5 +1,9 @@
 package com.lin.lysy.index.entity;
 
+
+import lombok.Data;
+
+@Data
 public class User {
     /**
      * 用户姓名，== 微信名

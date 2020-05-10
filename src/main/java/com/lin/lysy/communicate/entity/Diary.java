@@ -1,5 +1,8 @@
 package com.lin.lysy.communicate.entity;
 
+import lombok.Data;
+
+@Data
 public class Diary {
     /**
      * 用户id
