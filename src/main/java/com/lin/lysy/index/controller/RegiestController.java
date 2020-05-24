@@ -12,9 +12,9 @@ public class RegiestController {
     @Autowired
     private Iindex userService;
     @RequestMapping("/regiest")
-    public String Regiest(String userId, String userName, String password, int type){
-        User user = new User(userId, userName, password, type);
-        userService.login(user);
+    public String Regiest(String userId, String userName, String password,String selfID, int type){
+        User user = new User(userId, userName, password,selfID, type);
+        userService.regiest(user);
         return "注册成功";
     }
 }

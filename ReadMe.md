@@ -25,6 +25,7 @@ test：           //测试
   | userId | ID:用来判定身份 |
   | type | 身份判定 |
   |password | 登陆密码 |
+  |sex|性别|
   
  * Diary发表日记
  

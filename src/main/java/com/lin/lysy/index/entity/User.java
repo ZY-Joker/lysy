@@ -10,22 +10,29 @@ public class User {
      * */
     private String userName;
     /**
-     * 用户ID == 账户 判定身份
+     * 用户ID == 账户 判定身份   默认身份证后6位
      * */
     private String userId;
     /**
      * 密码 == 登录密码
      * */
+
     private String password;
+    /**
+     * 身份证号
+     * */
+    private String selfID;
+
     /**
      * 身份判定 == “0”： 老人 ； “1”： 义工； “2”：管理员；
      * */
     private int type;
 
-    public User(String userId, String userName, String password, int type) {
+    public User(String userId, String userName, String password,String selfID, int type) {
         this.userId = userId;
         this.userName = userName;
         this.password = password;
+        this.selfID = selfID;
         this.type = type;
     }
 
@@ -44,7 +51,13 @@ public class User {
     public void setUserId(String userId) {
         this.userId = userId;
     }
+    public String getSelfID() {
+        return selfID;
+    }
 
+    public void setSelfID(String selfID) {
+        this.selfID = selfID;
+    }
     public String getPassword() {
         return password;
     }
