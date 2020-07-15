@@ -24,6 +24,9 @@ test：           //测试
   | userName | 用户姓名 |
   | userId | ID:用来判定身份 |
   | type | 身份判定 |
+  | selfID | 身份证 |
+  | age | 年龄 |
+  | address | 地址|
   |password | 登陆密码 |
   |sex|性别|
   
@@ -51,7 +54,7 @@ test：           //测试
   ### 接口文档
   ----
   ##### 登录接口
-  1. 接口名： /index/login
+  1. 接口名： /User/Login
   2. 请求参数：GET
   3. 接口方法：json
   4. 请求参数：
@@ -69,4 +72,27 @@ test：           //测试
         }
      }
      ~~~~
+     
+     ##### 注册接口s
+     1. 接口名： /User/addUser
+     2. 请求参数： GET
+     3. 接口的方法： json
+     4. 请求参数：
+         ~~~~
+            1. userName | 用户姓名 
+            2. userId | ID:用来判定身份 
+            3. type | 身份判定 
+            4. selfID | 身份证 
+            5. age | 年龄 
+            6. address | 地址
+            7. password | 登陆密码 
+            8. sex|性别
+         ~~~~  
+     5.返回类型：
+      ~~~~
+         {
+            "status":200,
+            "mg":"注册成功"
+         }
+      ~~~~
    
