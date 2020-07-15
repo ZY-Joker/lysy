@@ -1,4 +1,4 @@
-package com.lin.lysy.index.entity;
+package com.lin.lysy.User.entity;
 
 
 import lombok.Data;
@@ -27,13 +27,43 @@ public class User {
      * 身份判定 == “0”： 老人 ； “1”： 义工； “2”：管理员；
      * */
     private int type;
+    private String sex;
+    private int age;
+    private String address;
 
-    public User(String userId, String userName, String password,String selfID, int type) {
-        this.userId = userId;
+    public String getSex() {
+        return sex;
+    }
+
+    public void setSex(String sex) {
+        this.sex = sex;
+    }
+
+    public int getAge() {
+        return age;
+    }
+
+    public void setAge(int age) {
+        this.age = age;
+    }
+
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
+    }
+
+    public User(String userName, String userId, int type, String password, String selfID, String sex, int age, String address) {
         this.userName = userName;
+        this.userId = userId;
         this.password = password;
         this.selfID = selfID;
         this.type = type;
+        this.sex = sex;
+        this.age = age;
+        this.address = address;
     }
 
     public String getUserName() {
