@@ -5,9 +5,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.io.IOException;
+
 @RestController
 @RequestMapping(value="/User")
-public class RegiestController {
+public class UserController {
     @Autowired
     private UserService userService;
 
@@ -21,5 +23,11 @@ public class RegiestController {
     @RequestMapping("/Login")
     public int Login(String userId, String password){
         return userService.SelectUserByUserIdPassword(userId, password);
+    }
+
+
+    @RequestMapping("/SelectByselfID")
+    public User findBySelfID(String selfID) throws IOException {
+        return userService.findBySelfID(selfID);
     }
 }
