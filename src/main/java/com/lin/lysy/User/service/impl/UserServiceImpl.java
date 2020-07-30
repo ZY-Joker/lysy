@@ -11,6 +11,7 @@ import org.springframework.transaction.annotation.Transactional;
 import java.io.IOException;
 
 @Service
+@Transactional
 public class UserServiceImpl implements UserService {
     @Autowired
     @Qualifier("userMapper")
