@@ -7,6 +7,6 @@ import java.io.IOException;
 
 public interface UserService {
     public void addUser(User user);
-    public int SelectUserByUserIdPassword(String userId,String password);
+    public User SelectUserByUserIdPassword(String userId,String password) throws IOException;
     public User findBySelfID(String selfID) throws IOException;
 }

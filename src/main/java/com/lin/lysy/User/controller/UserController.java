@@ -21,7 +21,7 @@ public class UserController {
     }
 
     @RequestMapping("/Login")
-    public int Login(String userId, String password){
+    public User Login(String userId, String password) throws IOException {
         return userService.SelectUserByUserIdPassword(userId, password);
     }
 

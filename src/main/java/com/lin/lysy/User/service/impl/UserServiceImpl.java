@@ -25,8 +25,8 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public int SelectUserByUserIdPassword(String userId, String password) {
-        return UserMapper.selectUserByUserIdPassword(userId,password);
+    public User SelectUserByUserIdPassword(String userId, String password) throws IOException {
+        return UserMapper.selectUserByUserIdPassword(userId, password);
     }
 
     @Override
