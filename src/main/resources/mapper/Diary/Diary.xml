@@ -4,7 +4,7 @@
     <sql id="selectDiary">select * from Diary</sql>
     <select id="findByDiaryId" resultType="com.lin.lysy.communicate.entity.Diary" parameterType="String">
         <include refid="selectDiary" />
-        where DiaryId = #{DiaryId}
+        where DiaryId = #{diaryId}
     </select>
     <insert id="addDiary" parameterType="com.lin.lysy.communicate.entity.Diary">
         insert into Diary
@@ -51,4 +51,23 @@
             null,null,0,0
         </trim>
     </insert>
+    <select id="findAll" resultMap="DiaryList">
+        <include refid="selectDiary" />
+    </select>
+    <select id="findAllBySelfId" parameterType="String"  resultMap="DiaryList">
+        <include refid="selectDiary" />
+        where selfID = #{selfID}
+    </select>
+    <resultMap id="DiaryList" type="com.lin.lysy.communicate.entity.Diary">
+        <result column="selfID" jdbcType="VARCHAR" property="selfID" />
+        <result column="title" jdbcType="VARCHAR" property="title" />
+        <result column="content" jdbcType="VARCHAR" property="content" />
+        <result column="image" jdbcType="VARCHAR" property="image" />
+        <result column="date" jdbcType="DATE" property="date" />
+        <result column="com_id" jdbcType="VARCHAR" property="com_id" />
+        <result column="gra_id" jdbcType="VARCHAR" property="gra_id" />
+        <result column="com_num" jdbcType="INTEGER" property="com_num" />
+        <result column="gra_num" jdbcType="INTEGER" property="gra_num" />
+        <result column="DiaryId" jdbcType="INTEGER" property="DiaryId" />
+    </resultMap>
 </mapper>

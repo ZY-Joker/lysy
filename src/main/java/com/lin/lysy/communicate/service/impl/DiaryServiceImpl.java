@@ -9,6 +9,8 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.io.IOException;
+import java.util.List;
+
 @Service
 @Transactional
 public class DiaryServiceImpl implements DiaryService {
@@ -20,12 +22,29 @@ public class DiaryServiceImpl implements DiaryService {
     }
 
     @Override
-    public Diary findByDiaryId(int diaryId) throws IOException {
+    public Diary findByDiaryId(String diaryId) throws IOException {
         return diaryMapper.findByDiaryId(diaryId);
     }
 
     @Override
     public int getNumber() {
         return diaryMapper.getNumber();
+    }
+
+    @Override
+    public List<Diary> findAll() {
+        return diaryMapper.findAll();
+    }
+
+    @Override
+    public List<Diary> findAllBySelfId(String selfID) {
+        return diaryMapper.findAllBySelfId(selfID);
+    }
+
+    @Override
+    public int addGra_num(String diaryId, String selfID) throws IOException {
+        Diary diary = findByDiaryId(diaryId);
+        int i = diary.getGra_num()+1;
+        return diaryMapper.addGra_num(i,diaryId, selfID);
     }
 }
