@@ -3,7 +3,7 @@
 <mapper namespace="com.lin.lysy.User.mapper.UserMapper">
     <sql id="selectUser">select * from User</sql>
     <select id="findBySelfID" resultType="com.lin.lysy.User.entity.User" parameterType="String">
-         <include refid="selectUser" />
-         where selfID = #{selfID}
+        <include refid="selectUser" />
+        where selfID = #{selfID}
     </select>
 </mapper>

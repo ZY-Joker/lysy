@@ -9,7 +9,7 @@ public class Comment{
     /**
      *  用户的id 账户
      * */
-    private String userId;
+    private String selfID;
     /**
      * 评论人的id账户
      * */
