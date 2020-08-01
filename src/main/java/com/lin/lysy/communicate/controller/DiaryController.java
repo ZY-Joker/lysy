@@ -2,7 +2,10 @@ package com.lin.lysy.communicate.controller;
 
 import com.lin.lysy.User.entity.User;
 import com.lin.lysy.User.service.UserService;
+import com.lin.lysy.communicate.entity.Comment;
 import com.lin.lysy.communicate.entity.Diary;
+import com.lin.lysy.communicate.mapper.CommentMapper;
+import com.lin.lysy.communicate.service.CommentService;
 import com.lin.lysy.communicate.service.DiaryService;
 import org.apache.ibatis.annotations.Param;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,6 +22,8 @@ import java.util.List;
 public class DiaryController {
     @Autowired
     private DiaryService DiaryService;
+    @Autowired
+    private CommentService commentService;
 
     @RequestMapping("/addDiary")
     public String addDiary(Diary diary) throws IOException {
@@ -46,4 +51,12 @@ public class DiaryController {
     int addGra_num(String diaryId,String selfID) throws IOException {
         return DiaryService.addGra_num(diaryId, selfID+"#");
     };
+    @RequestMapping("/addCom")
+    String addCom(String userId, String diaryId, String com_content) throws IOException {
+        Date date = new Date();
+        SimpleDateFormat dateFormat= new SimpleDateFormat("yyyy-MM-dd :hh:mm:ss");
+        commentService.addCom_content(userId,diaryId,com_content,dateFormat.format(date));
+        DiaryService.addCom(diaryId,userId+"#") ;
+        return "添加评论成功";
+    }
 }

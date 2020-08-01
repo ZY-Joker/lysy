@@ -45,6 +45,15 @@ public class DiaryServiceImpl implements DiaryService {
     public int addGra_num(String diaryId, String selfID) throws IOException {
         Diary diary = findByDiaryId(diaryId);
         int i = diary.getGra_num()+1;
-        return diaryMapper.addGra_num(i,diaryId, selfID);
+        String gra_id=diary.getGra_id()+selfID;
+        return diaryMapper.addGra_num(i,diaryId, gra_id);
+    }
+
+    @Override
+    public void addCom(String diaryId, String selfID) throws IOException {
+        Diary diary = findByDiaryId(diaryId);
+        int i = diary.getCom_num()+1;
+        String com_id=diary.getCom_id()+selfID;
+        diaryMapper.addCom(i,diaryId, com_id);
     }
 }

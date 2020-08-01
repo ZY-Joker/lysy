@@ -35,4 +35,9 @@ public interface DiaryMapper {
      * */
     @Update("update Diary set gra_num = #{i}, gra_id = #{selfID} where DiaryId = #{diaryId}")
     int addGra_num(int i, @Param("diaryId") String diaryId, @Param("selfID") String selfID);
+    /**
+     * 评论
+     * */
+    @Update("update Diary set com_num = #{i}, com_id = #{selfID} where DiaryId = #{diaryId}")
+    void addCom(int i, @Param("diaryId") String diaryId, @Param("selfID") String selfID);
 }

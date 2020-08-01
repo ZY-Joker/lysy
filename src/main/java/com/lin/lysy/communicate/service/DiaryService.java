@@ -16,4 +16,6 @@ public interface  DiaryService {
     List<Diary> findAllBySelfId( String selfID);
 
     int addGra_num( String diaryId, String selfID) throws IOException;
+
+    void addCom( String diaryId, String selfID) throws IOException;
 }
