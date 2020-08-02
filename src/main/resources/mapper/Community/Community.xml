@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lin.lysy.community.mapper.CommunityMapper">
+    <sql id="SelectAll">select * from Community</sql>
+  <select id="selectAllByaddress" resultMap="CommunityMapper" parameterType="String">
+      <include refid="SelectAll" />
+      where Com_address like #{Com_address}
+  </select>
+    <select id="selectOneByCom_id" resultType="com.lin.lysy.community.entity.Community" parameterType="String">
+        <include refid="SelectAll" />
+        where Com_Id = #{Com_Id}
+    </select>
+    <select id="seachCom" resultMap="CommunityMapper" parameterType="String">
+        <include refid="SelectAll" />
+        where Com_name like #{name}
+    </select>
+    <resultMap id="CommunityMapper" type="com.lin.lysy.community.entity.Community">
+        <result column="Com_name" jdbcType="VARCHAR" property="Com_name" />
+        <result column="Com_Id" jdbcType="INTEGER" property="Com_Id" />
+        <result column="Com_address" jdbcType="VARCHAR" property="Com_address" />
+        <result column="Com_introduce" jdbcType="VARCHAR" property="Com_introduce" />
+        <result column="Com_image" jdbcType="VARCHAR" property="Com_image" />
+        <result column="Com_People" jdbcType="VARCHAR" property="Com_People" />
+        <result column="Com_phone" jdbcType="VARCHAR" property="Com_phone" />
+    </resultMap>
+</mapper>
