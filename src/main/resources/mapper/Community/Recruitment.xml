@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lin.lysy.community.mapper.RecruitmentMapper">
+    <insert id="addRecruitment" parameterType="com.lin.lysy.community.entity.Recruitment">
+        insert into Recruitment
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="recruitment.Com_Id != null">
+                Com_Id,
+            </if>
+            <if test="recruitment.Recru_content != null">
+                Recru_content,
+            </if>
+            <if test="recruitment.Recru_Id != null">
+                Recru_Id,
+            </if>
+            <if test="recruitment.Recru_number != null">
+                Recru_number,
+            </if>
+            <if test="recruitment.Recru_date != null">
+                Recru_date,
+            </if>
+            <if test="recruitment.Recru_title  != null">
+                Recru_title,
+            </if>
+            <if test="recruitment.Recru_time  != null">
+                Recru_time
+            </if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="recruitment.Com_Id != null">
+                #{recruitment.Com_Id,jdbcType=INTEGER},
+            </if>
+            <if test="recruitment.Recru_content != null">
+                #{recruitment.Recru_content,jdbcType=VARCHAR},
+            </if>
+            <if test="recruitment.Recru_Id != null">
+                #{recruitment.Recru_Id,jdbcType=VARCHAR},
+            </if>
+            <if test="recruitment.Recru_number != null">
+                #{recruitment.Recru_number,jdbcType=INTEGER},
+            </if>
+            <if test="recruitment.Recru_date != null">
+                #{recruitment.Recru_date,jdbcType=DATE},
+            </if>
+            <if test="recruitment.Recru_title != null">
+                #{recruitment.Recru_title,jdbcType=VARCHAR},
+            </if>
+            <if test="recruitment.Recru_time != null">
+                #{recruitment.Recru_time,jdbcType=VARCHAR},
+            </if>
+        </trim>
+    </insert>
+</mapper>
