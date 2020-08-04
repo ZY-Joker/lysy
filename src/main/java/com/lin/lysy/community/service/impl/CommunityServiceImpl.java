@@ -30,4 +30,9 @@ public class CommunityServiceImpl implements CommunityService {
     public List<Community> seachCom(String Com_name) {
         return communityMapper.seachCom(Com_name);
     }
+
+    @Override
+    public String searchCom(String selfID) {
+        return communityMapper.searchCom('%'+selfID+'%');
+    }
 }

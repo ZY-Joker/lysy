@@ -11,4 +11,5 @@ public interface CommunityMapper {
     public List<Community> selectAllByaddress(@Param("Com_address") String address);
     public Community selectOneByCom_id(@Param("Com_Id") String Com_Id);
     public List<Community> seachCom(@Param("name") String Com_name);
+    public String searchCom(@Param("selfID") String selfID);
 }

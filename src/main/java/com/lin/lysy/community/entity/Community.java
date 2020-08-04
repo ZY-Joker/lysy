@@ -4,11 +4,11 @@ import lombok.Data;
 
 @Data
 public class Community {
-    String Com_name;
-    int Com_Id;
-    String Com_address;
-    String Com_introduce;
-    String Com_image;
-    String Com_People;
-    String Com_phone;
+    private String Com_name;
+    private int Com_Id;
+    private String Com_address;
+    private String Com_introduce;
+    private String Com_image;
+    private String Com_People;
+    private String Com_phone;
 }
