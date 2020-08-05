@@ -19,7 +19,7 @@ public class RecruitmentController {
     @Autowired
     CommunityService communityService;
     @RequestMapping(value="/addRecruitment")
-    public void addRecruitment(String selfID, String Recru_content,int Recru_number,String Recru_title, String Recru_time){
+    public String addRecruitment(String selfID, String Recru_content,int Recru_number,String Recru_title, String Recru_time){
             String Com_Id =  communityService.searchCom(selfID);
             Recruitment recruitment = new Recruitment();
             recruitment.setCom_Id(Com_Id);
@@ -33,7 +33,7 @@ public class RecruitmentController {
             int i = recruitmentService.getNumber(Com_Id);
             recruitment.setRecru_Id(Com_Id+""+(i+1));
             recruitmentService.addRecruitment(recruitment);
-
+return "发布招聘成功";
     };
     @RequestMapping(value="/RecruByRecru_Id")
     public Recruitment findOne(String Recru_Id){

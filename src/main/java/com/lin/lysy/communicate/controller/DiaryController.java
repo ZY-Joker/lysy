@@ -33,7 +33,8 @@ public class DiaryController {
         SimpleDateFormat dateFormat= new SimpleDateFormat("yyyy-MM-dd :hh:mm:ss");
         diary.setDate(dateFormat.format(date));
         DiaryService.addDiary(diary);
-        return "添加成功";
+        String msg="成功发布日志";
+        return msg;
     }
     @RequestMapping("/findByDiaryId")
     Diary findByDiaryId(String diaryId) throws IOException{
@@ -48,8 +49,9 @@ public class DiaryController {
         return DiaryService.findAllBySelfId(selfID);
     };
     @RequestMapping("/addGra_num")
-    int addGra_num(String diaryId,String selfID) throws IOException {
-        return DiaryService.addGra_num(diaryId, selfID+"#");
+    String addGra_num(String diaryId,String selfID) throws IOException {
+        DiaryService.addGra_num(diaryId, selfID+"#");
+        return "点赞成功";
     };
     @RequestMapping("/addCom")
     String addCom(String userId, String diaryId, String com_content) throws IOException {
@@ -57,6 +59,7 @@ public class DiaryController {
         SimpleDateFormat dateFormat= new SimpleDateFormat("yyyy-MM-dd :hh:mm:ss");
         commentService.addCom_content(userId,diaryId,com_content,dateFormat.format(date));
         DiaryService.addCom(diaryId,userId+"#") ;
-        return "添加评论成功";
+        String msg="添加评论成功";
+        return msg;
     }
 }

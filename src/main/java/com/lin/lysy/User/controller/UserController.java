@@ -17,7 +17,8 @@ public class UserController {
     public String Regiest(String userId, String userName, String password,String selfID, int type, String sex, int age, String address){
         User user = new User(userName,userId ,type, password,selfID, sex,age,address);
         userService.addUser(user);
-        return "注册成功";
+        String msg = "注册成功";
+        return msg;
     }
 
     @RequestMapping("/Login")
