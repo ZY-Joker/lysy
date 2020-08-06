@@ -16,6 +16,17 @@ public class CommunityServiceImpl implements CommunityService {
     CommunityMapper communityMapper;
 
     @Override
+    public int getNumber() {
+        return communityMapper.getNumber();
+    }
+
+    @Override
+    public int addCommunity(Community community) {
+        communityMapper.addCommunity(community);
+        return 1;
+    }
+
+    @Override
     public List<Community> selectAllByaddress(String address) {
         System.out.println(address);
         return communityMapper.selectAllByaddress(address);

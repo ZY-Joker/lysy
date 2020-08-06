@@ -18,6 +18,11 @@
        select distinct Com_Id from Community
        where selfID like #{selfID}
     </select>
+    <insert id="addCommunity" parameterType="com.lin.lysy.community.entity.Community">
+        insert into Community(Com_name,Com_Id,Com_address,Com_introduce,Com_image,Com_People,Com_phone,selfID)
+        values(#{community.Com_name},#{community.Com_Id},#{community.Com_address},
+        #{community.Com_introduce},#{community.Com_image},#{community.Com_People},#{community.Com_phone},#{community.selfID})
+    </insert>
     <resultMap id="CommunityMapper" type="com.lin.lysy.community.entity.Community">
         <result column="Com_name" jdbcType="VARCHAR" property="Com_name" />
         <result column="Com_Id" jdbcType="INTEGER" property="Com_Id" />

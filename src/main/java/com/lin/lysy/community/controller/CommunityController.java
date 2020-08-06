@@ -14,6 +14,16 @@ import java.util.List;
 public class CommunityController {
     @Autowired
     CommunityService communityService;
+    @RequestMapping("/addCommunity")
+    String addCommunity(String com_name,String com_address, String com_introduce, String com_image, String com_People, String com_phone,String selfID){
+        int id=communityService.getNumber()+1;
+        Community community = new Community(com_name,id,com_address,com_introduce,com_image,com_People,com_phone,selfID);
+        int i = communityService.addCommunity(community);
+        if(i == 1) {
+            return "社区添加成功";
+        }
+        return "社区添加失败";
+    };
     @RequestMapping("/selectAllByaddress")
     public List<Community> selectAllByaddress(String Com_address){
        return  communityService.selectAllByaddress('%'+Com_address+"%");
