@@ -21,7 +21,7 @@ public class UserServiceImpl implements UserService {
     @Override
     @Transactional
     public void addUser(User user) {
-      UserMapper.addUser(user.getUserName(),user.getUserId(),user.getType(),user.getPassword(),user.getSelfID(),user.getSex(),user.getAge(),user.getAddress());
+      UserMapper.addUser(user.getUserName(),user.getUserId(),user.getType(),user.getPassword(),user.getSelfID(),user.getSex(),user.getAge(),user.getAddress(),user.getDate());
     }
 
     @Override

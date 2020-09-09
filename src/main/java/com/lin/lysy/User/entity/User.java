@@ -1,9 +1,6 @@
 package com.lin.lysy.User.entity;
 
 
-import lombok.Data;
-
-@Data
 public class User {
     /**
      * 用户姓名，== 微信名
@@ -30,6 +27,15 @@ public class User {
     private String sex;
     private int age;
     private String address;
+    private String date;
+
+    public String getDate() {
+        return date;
+    }
+
+    public void setDate(String data) {
+        this.date = data;
+    }
 
     public String getSex() {
         return sex;
@@ -54,8 +60,8 @@ public class User {
     public void setAddress(String address) {
         this.address = address;
     }
-
-    public User(String userName, String userId, int type, String password, String selfID, String sex, int age, String address) {
+    public User(){};
+    public User(String userName, String userId, int type, String password, String selfID, String sex, int age, String address,String data) {
         this.userName = userName;
         this.userId = userId;
         this.password = password;
@@ -64,6 +70,12 @@ public class User {
         this.sex = sex;
         this.age = age;
         this.address = address;
+        this.date = data;
+    }
+
+    public User(String userId, String password) {
+        this.userId = userId;
+        this.password = password;
     }
 
     public String getUserName() {
