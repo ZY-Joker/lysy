@@ -3,9 +3,12 @@ package com.lin.lysy.community.service.impl;
 import com.lin.lysy.community.entity.Recruitment;
 import com.lin.lysy.community.mapper.RecruitmentMapper;
 import com.lin.lysy.community.service.RecruitmentService;
+import com.lin.lysy.learn.entity.Article;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+
+import java.util.List;
 
 @Service
 @Transactional
@@ -40,4 +43,11 @@ public class RecruitmentServiceImpl implements RecruitmentService {
         }
         return 1;
     }
+
+    @Override
+    public List<Recruitment> queryByComId(String Com_Id) {
+        return recruitmentMapper.queryByComId(Com_Id);
+    }
+
+
 }

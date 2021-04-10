@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.List;
 
 @RestController
 @RequestMapping(value="/Community/Recruitment")
@@ -49,4 +50,11 @@ return "发布招聘成功";
         }
 
     }
+
+    @RequestMapping(value ="/queryByComId")
+    public List<Recruitment> queryByComId(String Com_Id) {
+        return recruitmentService.queryByComId(Com_Id);
+    }
+
+
 }
